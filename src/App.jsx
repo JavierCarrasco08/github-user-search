@@ -7,15 +7,15 @@ import User from "./components/User";
 function App() {
   const [mood, setMood] = useState(true);
   return (
-    <main>
-      <header>
-        <button>
+    <main className="w-full h-full bg-primaryBackgroundSun">
+      <header className="flex justify-end h-24 items-center">
+        <button className="mr-8">
           <img src={sun} alt="Icon Mood" />
         </button>
       </header>
       <User />
-      <footer>
-        <nav>
+      <footer className="w-full h-24 flex justify-center">
+        <nav className="flex gap-4">
           <a
             href="https://github.com/JavierCarrasco08"
             title="Github"
