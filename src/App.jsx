@@ -14,23 +14,25 @@ function App() {
   let bg = mood ? "bg-primaryBackgroundSun" : "bg-primaryBackgroundMoon";
   return (
     <main
-      className={`w-full h-full ${bg} flex flex-col justify-between items-center transition-colors duration-1000`}>
+      className={`w-full h-full ${bg} flex flex-col justify-between items-center transition duration-1000`}>
       <header className="w-full flex justify-end h-24 items-center">
         <button className="mr-8" onPointerDown={handlerChangeMood}>
-          <img src={mood ? sun : moon} alt="Icon Mood" />
+          <img src={mood ? moon : sun} alt="Icon Mood" />
         </button>
       </header>
       <User mood={mood} />
-      <footer className="w-full h-24 flex justify-center">
+      <footer className="w-full h-24 flex justify-center items-center">
         <nav className="flex gap-4">
           <a
             href="https://github.com/JavierCarrasco08"
             title="Github"
             target="_blank"
+            className="hover:-translate-y-3 transition duration-1000"
             rel="noopener referrer">
             <img src={mood ? gitHub : gitHubMoon} alt="Github" />
           </a>
           <a
+            className="hover:-translate-y-3 transition duration-1000"
             href="https://www.instagram.com/javier_carrasco08/?hl=es-la"
             title="Instagram"
             target="_blank"
