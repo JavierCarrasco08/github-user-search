@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaryBackgroundCard: "#f8f9fa",
-        primaryBackgroundSun: "#f1faee",
+        primaryBackgroundSun: "#f8f9fa",
+        primaryBackgroundCard: "#edf2f4",
         reposSun: "#e63946",
         nameSun: "#1d3557",
         descriptionSun: "#a8dadc",
