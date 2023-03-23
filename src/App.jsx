@@ -6,11 +6,13 @@ import gitHubMoon from "./assets/githubMoon.svg";
 import instagram from "./assets/instagram.svg";
 import instagramMoon from "./assets/instagramMoon.svg";
 import User from "./components/User";
+localStorage.setItem("Mood", "Sun");
 function App() {
   const [mood, setMood] = useState(true);
   function handlerChangeMood() {
     setMood(!mood);
   }
+
   let bg = mood ? "bg-primaryBackgroundSun" : "bg-primaryBackgroundMoon";
   return (
     <main
@@ -27,12 +29,12 @@ function App() {
             href="https://github.com/JavierCarrasco08"
             title="Github"
             target="_blank"
-            className="hover:-translate-y-3 transition duration-1000"
+            className="screenMin:hover:-translate-y-3 transition duration-1000"
             rel="noopener referrer">
             <img src={mood ? gitHub : gitHubMoon} alt="Github" />
           </a>
           <a
-            className="hover:-translate-y-3 transition duration-1000"
+            className="screenMin:hover:-translate-y-3 transition duration-1000"
             href="https://www.instagram.com/javier_carrasco08/?hl=es-la"
             title="Instagram"
             target="_blank"

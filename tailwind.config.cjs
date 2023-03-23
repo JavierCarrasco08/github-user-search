@@ -18,6 +18,11 @@ module.exports = {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
       },
+      screens: {
+        tablet: "500px",
+        tabletXL: "660px",
+        screenMin: "900px",
+      },
     },
   },
   plugins: [],
