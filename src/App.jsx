@@ -6,9 +6,8 @@ import gitHubMoon from "./assets/githubMoon.svg";
 import instagram from "./assets/instagram.svg";
 import instagramMoon from "./assets/instagramMoon.svg";
 import User from "./components/User";
-localStorage.setItem("Mood", "Sun");
 function App() {
-  const [mood, setMood] = useState(true);
+  const [mood, setMood] = useState(false);
   function handlerChangeMood() {
     setMood(!mood);
   }

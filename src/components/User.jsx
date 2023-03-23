@@ -22,13 +22,14 @@ export default function User({ mood }) {
         json = await res.json();
       if (!res.ok) {
         throw {
-          ...user,
+          bio: "This Profile has no bio",
           name: "User not registered",
           login: "Not found",
-          location: "País de las maravillas",
+          location: "Not found",
           publicRepos: 0,
           followers: 0,
           following: 0,
+          src: false,
         };
       }
       setUser({

@@ -14,11 +14,12 @@ export default function Information({
       <h2 className={`font-semibold ${color} tablet:text-base text-sm`}>
         ( {user.login} )
       </h2>
-      <p className={`text-center ${description} font-medium`}>
+      <p
+        className={`text-center ${description} font-medium screenMin:text-left`}>
         {user.bio ? user.bio : "This profile has not bio"}
       </p>
       <section
-        className={`flex gap-2 text-sm mx-auto ${colorRepo} font-semibold`}>
+        className={`flex gap-2 justify-between text-sm mx-auto ${colorRepo} font-semibold`}>
         <h3 className="flex flex-col items-center">
           Repositorios: <span>{user.publicRepos}</span>
         </h3>
