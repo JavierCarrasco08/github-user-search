@@ -8,10 +8,17 @@ import instagramMoon from "./assets/instagramMoon.svg";
 import User from "./components/User";
 function App() {
   const [mood, setMood] = useState(false);
+  if (localStorage.getItem("mood") === "sun") {
+    setTimeout(() => setMood(true), 200);
+  }
   function handlerChangeMood() {
+    if (!mood) {
+      localStorage.setItem("mood", "sun");
+    } else {
+      localStorage.setItem("mood", "moon");
+    }
     setMood(!mood);
   }
-
   let bg = mood ? "bg-primaryBackgroundSun" : "bg-primaryBackgroundMoon";
   return (
     <main
