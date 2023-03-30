@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import InputsHeader from "./Inputs-header";
 import Avatar from "./Avatar";
 import Information from "./Information";
 import location from "./../assets/locationSun.svg";
 import locationMoon from "./../assets/locationMoon.svg";
 import getUsers from "../utils/api";
+import { moodContext } from "./../context/mood";
 
-export default function User({ mood }) {
+export default function User() {
+  const moodPageContext = useContext(moodContext);
   const [user, setUser] = useState({
     name: "The Octocat",
     login: "@Octocat",
@@ -49,28 +51,38 @@ export default function User({ mood }) {
   return (
     <section
       className={`w-11/12 tablet:w-9/12 tabletXL:w-7/12 md:w-6/12  min-h-[400px] ${
-        mood ? "bg-primaryBackgroundCard" : "bg-primaryBackgroundCardMoon"
+        moodPageContext
+          ? "bg-primaryBackgroundCard"
+          : "bg-primaryBackgroundCardMoon"
       } flex items-center justify-around px-4 flex-col gap-3 box-border transition duration-1000 py-4`}>
       <InputsHeader
-        bg={mood ? "bg-reposSun" : "bg-reposMoon"}
+        bg={moodPageContext ? "bg-reposSun" : "bg-reposMoon"}
         border={
-          mood ? "border-primaryBackgroundMoon" : "border-primaryBackgroundSun"
+          moodPageContext
+            ? "border-primaryBackgroundMoon"
+            : "border-primaryBackgroundSun"
         }
         color={
-          mood ? "text-primaryBackgroundMoon" : "text-primaryBackgroundSun"
+          moodPageContext
+            ? "text-primaryBackgroundMoon"
+            : "text-primaryBackgroundSun"
         }
         getUsers={handlerClickGetUser}
       />
       <section className="w-full flex items-center flex-col gap-3 box-border screenMin:flex-row  justify-around">
-        <Avatar mood={mood} src={user.src} />
+        <Avatar src={user.src} />
         <Information
-          colorName={mood ? "text-nameSun" : "text-reposSun"}
-          colorRepo={mood ? "text-reposSun" : "text-reposMoon"}
-          description={mood ? "text-descriptionSun" : "text-descriptionMoon"}
-          color={
-            mood ? "text-primaryBackgroundMoon" : "text-primaryBackgroundSun"
+          colorName={moodPageContext ? "text-nameSun" : "text-reposSun"}
+          colorRepo={moodPageContext ? "text-reposSun" : "text-reposMoon"}
+          description={
+            moodPageContext ? "text-descriptionSun" : "text-descriptionMoon"
           }
-          iconLocation={mood ? location : locationMoon}
+          color={
+            moodPageContext
+              ? "text-primaryBackgroundMoon"
+              : "text-primaryBackgroundSun"
+          }
+          iconLocation={moodPageContext ? location : locationMoon}
           user={user}
         />
       </section>
